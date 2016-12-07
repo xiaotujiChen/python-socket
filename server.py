@@ -9,6 +9,7 @@ HOST = ''   # Symbolic name, meaning all available interfaces
 PORT = 8888 # Arbitrary non-privileged port
  
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 print 'Socket created'
  
 #Bind socket to local host and port
